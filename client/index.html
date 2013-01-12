@@ -1,0 +1,21 @@
+<html>
+    <head>
+	<script src="../node_modules/socket.io/node_modules/socket.io-client/dist/socket.io.js"></script>
+	<script>
+	window.onload = function() {
+	  var sensor = document.getElementById('sensor');
+	  var socket = io.connect("http://localhost:8888");
+	  socket.on("update", function (data) {
+		sensor.innerHTML = data;
+		console.log(data);
+	  });
+	}
+	</script>
+        <title>Testing result</title>
+    </head>
+    <body>
+		<div>
+        <p id="sensor">nobody in range</p>
+		</div>
+    </body>
+</html>
