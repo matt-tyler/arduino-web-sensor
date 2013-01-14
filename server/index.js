@@ -14,7 +14,7 @@ var io = require("socket.io").listen(httpserver);
 
 var serialport = require("serialport");
 var SerialPort = serialport.SerialPort; // localize object constructor
-var portname = "COM3";
+var portname = "/dev/ttyS0";
 
 var serialPort = new SerialPort(portname, {
 	baudrate: 9600,
